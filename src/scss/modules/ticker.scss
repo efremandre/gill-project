@@ -1,0 +1,58 @@
+@use '../base/variable' as var;
+@use '../base/extentsions';
+
+.ticker {
+  position: relative;
+  overflow: hidden;
+  padding: .5em 0;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  &__item {
+    color: var.$lightColor;
+    font-size: 24px;
+    line-height: 130%;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: 0 50px;
+  }
+}
+
+.services__ticker_garant {
+  transform: rotate(1deg);
+  background: var.$accentColorTwo;
+  & .ticker__item {
+    animation: ticker 15s linear infinite;
+  }
+}
+
+.services__ticker_free {
+  transform: rotate(-1deg);
+  border: 1px solid var.$accentColor;
+  background: #fff;
+  & .ticker__item {
+    color: #000;
+    animation: tickerFree 25s linear infinite;
+  }
+}
+
+  @keyframes ticker {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+
+  @keyframes tickerFree {
+    0% {
+      transform: translate3d(-100%, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+

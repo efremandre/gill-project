@@ -1,0 +1,65 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+@use '../modules/logo';
+
+.footer {
+  padding: 2em 0;
+  @include mix.adaptivFont(14, 8);
+  line-height: 1.3em;
+  color: var.$lightColor;
+  background-color: var.$darkColor;
+  & p {
+    margin: 0;
+  }
+
+  &__wrapper {
+    @include mix.displayFlex(flex, space-between, center);
+    margin: 0 -1em;
+  }
+
+  &__requisites {
+    padding: 0 1em;
+    text-align: left;
+    flex: 0 1 50%;
+    &>p>a {
+      display: inline-block;
+      margin-top: 4px;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+
+  &__copyright {
+    flex: 0 1 auto;
+    padding: 0 1em;
+  }
+
+  &__author {
+    margin-top: 1em;
+    &>a {
+      position: relative;
+      &:before {
+        content: '(´･ᴗ･ `)';
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        width: 70px;
+        height: 20px;
+        top: 0;
+        left: -60px;
+        transition: visibility .6s ease, opacity .6s ease;
+      }
+      &:hover {
+        text-decoration: underline;
+        &:before {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

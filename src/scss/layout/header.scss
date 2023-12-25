@@ -1,0 +1,140 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+
+$sizeAfterEl: 1.1em;
+.navigation {
+  position: fixed;
+  z-index: 3;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  padding: .5em 0;
+  color: var.$lightColor;
+  background: rgba(14, 46, 74, .9);
+  box-shadow: 0 4px 7px -5px rgba(1, 1, 1, 0.5);
+  transition: transform .8s ease;
+
+  &._hidden {
+    transform: translateY(-150%);
+  }
+
+  &__zero-block {
+    flex: 0 1 220px;
+  }
+
+  &__wrapper {
+    @include mix.displayFlex(flex, space-between, center);
+    box-sizing: border-box;
+  }
+
+  &__logo {
+    flex: 0 1 auto;
+  }
+
+  &__block {
+    flex: 0 1 auto;
+    @include mix.displayFlex(flex, flex-end, center);
+    gap: 20px;
+  }
+
+  &__phone {
+    @include mix.displayFlex(flex, flex-end, flex-end);
+    flex-direction: column;
+    padding: 1em 0;
+  }
+}
+
+.nav {
+  flex: 1 1 auto;
+  @include mix.displayFlex(flex, center, center);
+  &__list {
+    @include mix.displayFlex(flex, center, center);
+  }
+
+  &__item-hidden {
+    display: none;
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    padding: 1em;
+    font-weight: 400;
+    font-size: #{var.$generalTextSize} + px;
+    line-height: var.$generalLineHeight;
+    transition: text-decoration .8s ease;
+
+    &:before {
+      @extend %pseudoElement;
+      bottom: 15px;
+      left: 18px;
+      width: 0;
+      height: 2px;
+      background: var.$lightColor;
+      transition: width .5s ease-in-out, color .5s ease-in-out;
+    }
+
+    @media (any-hover: hover) {
+      &:hover{
+        color: var.$lightColor;
+        &:before {
+          width: 70%;
+        }
+      }
+    }
+  }
+}
+
+.phone {
+  &__link {
+    position: relative;
+    padding-left: 1.5em;
+    font-weight: 400;
+    @include mix.adaptivFont(18, var.$generalTextSizeMin);
+
+    &:after {
+      @extend %pseudoElement;
+      top: calc(50% - ($sizeAfterEl / 2));
+      left: 0;
+      width: $sizeAfterEl;
+      height: $sizeAfterEl;
+      background: url('../../assets/images/icon/phone.svg') center center / contain no-repeat;
+      animation: callAnimation 1s ease-in-out infinite;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+          text-decoration: underline;
+        }
+    }
+  }
+}
+
+@keyframes callAnimation {
+  0% {
+    transform: rotate(0);
+  }
+  15% {
+    transform: rotate(-12deg);
+  }
+  40% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(0);
+  }
+  60% {
+    transform: rotate(0);
+  }
+  70% {
+    transform: rotate(0);
+  }
+  85% {
+    transform: rotate(12deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}

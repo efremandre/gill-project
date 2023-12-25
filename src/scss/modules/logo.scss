@@ -1,0 +1,14 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+@use '../base/extentsions';
+
+.logo {
+	@include mix.displayFlex(flex, center, center);
+	transition: .6s transform ease;
+
+	@media (any-hover: hover) {
+		&:hover {
+			transform: rotateY(360deg)
+		}
+	}
+}

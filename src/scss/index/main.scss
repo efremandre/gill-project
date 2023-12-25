@@ -1,0 +1,12 @@
+@use '../base/variable' as var;
+@use 'hero';
+@use 'contact';
+@use '../modules/modal-img';
+
+.main {
+	flex: 1 1 auto;
+
+	&__contact {
+		padding: 3em 0;
+	}
+}
