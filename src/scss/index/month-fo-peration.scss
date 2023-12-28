@@ -1,45 +1,14 @@
 @use '../base/variable' as var;
 @use '../base/mixin' as mix;
 
-
-
-.svg-bottom {
-	position: absolute;
-	bottom: -1px;
-	width: 100%;
-	height: 8vw;
-}
-
-.svg-bottom svg,
-.svg-top svg {
-	width: 100%;
-	height: 100%;
-}
-
 .month-fo-peration {
+	overflow: hidden;
 	position: relative;
+	z-index: 3;
 	padding: 200px 0 130px 0;
 	color: #fff;
 	background: radial-gradient(79.89% 56.21% at 50% 58.53%, #22407F 0%, #000 100%);
-
-	// &::after,
-	// &::before {
-	// 	content: '';
-	// 	position: absolute;
-	// 	width: 100%;
-	// 	height: 130px;
-	// 	left: 0;
-	// }
-
-	// &::before {
-	// 	top: -1px;
-	// 	background: url('../../assets/images/triangle-top.svg') center top / cover no-repeat;
-	// }
-
-	// &::after {
-	// 	bottom: -1px;
-	// 	background: url('../../assets/images/traingle-bottom.svg') left bottom / cover no-repeat;
-	// }
+	clip-path: polygon(0 0, 100% 13%, 100% 86%, 0% 100%);
 
 	&__item {
 		width: 100%;
@@ -143,24 +112,4 @@
 		top: 0;
 		right: 0;
 	}
-}
-
-.man {
-	display: block;
-	position: absolute;
-	left: -6px;
-	top: -1px;
-	width: 512px;
-	height: 50px;
-	background: url('../../assets/images/tobuy/man-bottom.png') left top / cover no-repeat;
-}
-
-.woman {
-	display: block;
-	position: absolute;
-	left: 0;
-	top: -1px;
-	width: 510px;
-	height: 53px;
-	background: url('../../assets/images/tobuy/woman-bottom.png') left top / cover no-repeat;
 }

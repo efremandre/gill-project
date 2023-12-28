@@ -14,8 +14,8 @@ $version = $_POST['selectedVersion'];
 $rand = mt_rand();
 $today = date("Y.m.d h:i:s G");
 
-$token = "5897585110:AAEF-Rxg4jyhUe8CbFJZk-9NI99YitZbO1c";
-$chat_id = "354964383";
+$token = "";
+$chat_id = "";
 
 $arr = array(
 	'👀 ЗАЯВКА С ФОРМЫ № ' => $rand,

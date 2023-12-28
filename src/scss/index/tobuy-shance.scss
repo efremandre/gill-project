@@ -1,24 +1,15 @@
 @use '../base/variable' as var;
 @use '../base/mixin' as mix;
 
-.svg-top {
-	position: absolute;
-	z-index: 3;
-	bottom: -8vw;
-	width: 100%;
-	height: 8vw;
-}
-
 .tobuy-shance {
 	position: relative;
-	z-index: 2;
 
 	&__image {
 		position: absolute;
-		bottom: 0;
+		bottom: -50px;
 		left: 0;
-		height: 660px;
-		width: 510px;
+		height: 666px;
+		width: 503px;
 	}
 
 	&__wrapper {

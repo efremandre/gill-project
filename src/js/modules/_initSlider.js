@@ -19,6 +19,9 @@ export function initSlider() {
 			},
 			1100: {
 				slidesPerView: 3,
+			},
+			1280: {
+				slidesPerView: 2,
 			}
 		}
 	})
