@@ -1,0 +1,90 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+
+.last-shance {
+	position: relative;
+
+	&__wrapper {
+		height: 510px;
+		position: relative;
+		@include mix.displayFlex(flex, flex-end, flex-start);
+		color: #fff;
+		border-radius: 64px;
+		background: radial-gradient(80.1% 73.21% at 50% 45.93%, #22407F 0%, #000 100%);
+	}
+
+	&__img {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+	}
+
+	&__item {
+		flex: 0 0 45%;
+		padding: 65px 60px 0 10px;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		color: #fff;
+		font-weight: 800;
+		line-height: 56px;
+		letter-spacing: -1.44px;
+	}
+
+	&__call {
+		margin-bottom: 30px;
+		color: var.$accentColor;
+		font-size: 32px;
+		font-weight: 700;
+		letter-spacing: -.64px;
+	}
+
+	&__button {
+		@include mix.displayFlex(flex, space-between, center);
+	}
+
+	&__btn {
+		max-width: 207px;
+	}
+
+	&__action {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 16px;
+		letter-spacing: -.72px;
+
+		&:before {
+			height: 6px;
+			bottom: -3px;
+		}
+	}
+
+	&__attention {
+		position: absolute;
+		bottom: 30px;
+		right: 60px;
+		font-size: 20px;
+		letter-spacing: -.4px;
+	}
+
+	&__attention-text {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__splashing {
+		position: absolute;
+		top: 50%;
+		left: -70px;
+		transform: translateY(-50%);
+		display: block;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+	}
+}
+
+.woman-version .last-shance__call {
+	color: var.$accentColorWoman;
+}

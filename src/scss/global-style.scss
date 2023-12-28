@@ -5,7 +5,7 @@
 html,
 body {
 	height: 100%;
-	scrollbar-color: var.$accentColorTwo var.$lightColor;
+	scrollbar-color: #040810 var.$lightColor;
 	scrollbar-width: thin;
 	font-family: var.$family;
 	font-weight: 400;
@@ -16,9 +16,24 @@ body {
 	background: var.$mainBg;
 }
 
+.man-version ::selection {
+	color: #173065;
+	background: var.$accentColor;
+}
+
+.woman-version ::selection {
+	color: var.$accentColor;
+	background: var.$accentColorWoman;
+}
+
+* {
+	box-sizing: border-box;
+}
+
 * img {
 	display: block;
 	max-width: 100%;
+	object-fit: cover;
 }
 
 h1 {
@@ -35,6 +50,10 @@ button {
 	button:hover {
 		cursor: pointer;
 	}
+}
+
+button:hover {
+	cursor: pointer;
 }
 
 button:focus {
@@ -70,15 +89,23 @@ a:focus {
 	overflow: hidden;
 	flex-direction: column;
 	min-height: 100vh;
-	max-width: 1920px;
+	max-width: 1280px;
 	margin: 0 auto;
-	@include mix.adaptivFont(var.$generalTextSize, var.$generalTextSizeMin);
+	font-size: 18px;
+}
+
+.conatainer-image {
+	position: relative;
+	width: 100%;
+	max-width: 1280px;
+	margin: 0 auto;
 }
 
 .container {
 	width: 100%;
 	box-sizing: border-box;
 	max-width: #{var.$widthContainer + px};
+	height: 100%;
 	margin: 0 auto;
 	padding: 0 1.3em;
 }
@@ -88,10 +115,88 @@ a:focus {
 }
 
 .main-title {
-	@include mix.adaptivFont(var.$titleFontSize, var.$titleFontSizeMin);
+	font-size: 64px;
 	color: var.$titleColor;
 	font-weight: var.$titleWeight;
 	line-height: var.$titleHeight;
-	letter-spacing: var.$letterSpacing;
+	letter-spacing: -2.56px;
 	text-transform: var.$titleTransform;
+}
+
+._hidden {
+	display: none;
+}
+
+.accent-underline {
+	position: relative;
+	display: inline-block;
+
+	&>span {
+		position: relative;
+		z-index: 2;
+	}
+
+	&_title::before {
+		height: 12px;
+	}
+
+	&_descript::before {
+		height: 6px;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		background: var.$accentColor;
+	}
+}
+
+.woman-version .accent-underline {
+	&::before {
+		background: var.$accentColorWoman;
+	}
+}
+
+.wave-wrapper {
+	position: relative;
+	top: 7px;
+	left: -7px;
+
+	.wave {
+		position: absolute;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: #ff0000;
+		animation: pulse 9s linear infinite;
+		opacity: 0;
+
+		&:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		&:nth-child(2) {
+			animation-delay: 3s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 6s;
+		}
+	}
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(10);
+		opacity: 0;
+	}
 }

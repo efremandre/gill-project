@@ -2,11 +2,11 @@
 @use '../base/mixin' as mix;
 
 .subtitle {
-  margin: 0;
-  @include mix.adaptivFont(var.$subTitleFontSize, var.$subTitleFontSizeMin);
-  font-family: var.$subFamily;
-  font-weight: var.$subTitleWeight;
-  line-height: var.$subTitleHeight;
-  color: var.$subTitleColor;
-  text-align: center;
+	margin: 0;
+	font-size: 48px;
+	font-family: var.$subFamily;
+	font-weight: var.$subTitleWeight;
+	line-height: var.$subTitleHeight;
+	color: var.$subTitleColor;
+	letter-spacing: -1.44px;
 }

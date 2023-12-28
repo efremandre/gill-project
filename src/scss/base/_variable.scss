@@ -1,46 +1,46 @@
 @use "sass:map";
 /// общие
 $mainBg: #fff; // background
-$accentColor: #1D1B1B; // акцентный цвет и цвет скроллбара
+$accentGeneral: #173065;
+$accentColor: #ff7300; // акцентный цвет и цвет скроллбара
+$accentColorWoman: #00c6ff;
 $accentColorTwo: #ccc; // второй акцентный цвет и цвет скроллбара
-$widthContainer: 1200; // max-width
+$widthContainer: 1100; // max-width
 
 $family: 'Inter', 'Arial', 'Helvetica', sans-serif; // font-family дефолтный шрифт
-$subFamily: 'Tinos', 'Arial', 'Helvetica', sans-serif; // font-family допшрифт шрифт
+$subFamily: 'Inter', 'Arial', 'Helvetica', sans-serif; // font-family допшрифт шрифт
 
 $generalBigTextSize: 18; // font-size текст который надо сделать чуть больше, чем основной
 $generalBigTextSizeMin: 16; // font-size текст который надо сделать чуть больше, чем основной для экрана 320px
-$generalTextSize: 16; // font-size основного текста
+$generalTextSize: 18; // font-size основного текста
 $generalTextSizeMin: 14; // font-size основного текста для экрана 320px
 
 $generalLineHeight: 1.5em; // line-height основного текста
 $generalBigLineHeight: 1.5em; // line-height основного болшого текста
 $letterSpacing: 0.02em;
 
-$generalColorText: #FBFBFB; // color основного текста
-$subColorText: #4a4a4a; // color дополнительного текста
+$generalColorText: #173065; // color основного текста
+$subColorText: #fff; // color дополнительного текста
 
 /// скроллбар
-$borderRadius: 4px;
+$borderRadius: 0;
 
 /// заголовок главный
-$titleColor: #1D1B1B; // color
+$titleColor: #fff; // color
 $titleWeight: 700; // font-weight
-$titleFontSize: 90; // font-size
-$titleFontSizeMin: 32; // font-size
+$titleFontSize: 64; // font-size
+$titleFontSizeMin: 44; // font-size
 $titleHeight: 1.2em; // line-height
 $titleTransform: none; // text-transform
 
 /// подзаголовок
-$subTitleColor: #FBFBFB; // color
-$subTitleWeight: 400; // font-weight
-$subTitleFontSize: 50; // font-size
-$subTitleFontSizeMin: 28; // font-size screen 320px
+$subTitleColor: #173065; // color
+$subTitleWeight: 800; // font-weight
+$subTitleFontSize: 48; // font-size
+$subTitleFontSizeMin: 24; // font-size screen 320px
 $subTitleHeight: 1.3em; // line-height
 
-/// бургер
-$colorBurger: #1D1B1B;
 
 /// кнопка вверх
-$darkColor: #1D1B1B; // border, background for :before, :after, background for button-up__link
-$lightColor: #FBFBFB; // hover background for :before, :after
+$darkColor: #173065; // border, background for :before, :after, background for button-up__link
+$lightColor: #fff; // hover background for :before, :after

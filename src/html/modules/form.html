@@ -1,0 +1,74 @@
+<div class="form-popup">
+	<div class="form-popup__body">
+		<div class="form-popup__wrapper-order">
+			<div class="form-popup__header">
+				<h2 class="form-popup__title">Оформить заказ</h2>
+				<button class="form-popup__close" data-closemodal>
+					<img src="../../assets/images/icon/close.svg" alt="Х">
+				</button>
+			</div>
+			<div class="form-popup__wrapper">
+				<div class="form-popup__order order">
+					<div class="order__image">
+						<img data-toggle="man" src="../../assets/images/popup/cassete-man.png" alt="Кассеты">
+						<img data-toggle="woman" src="../../assets/images/popup/cassete-woman.png" alt="Кассеты">
+					</div>
+					<div class="order__order-info">
+						<div class="order__delivery">
+							<p>Доставка: <span class="order__delivery-price">400</span>₽</p>
+						</div>
+						<div class="order__allprice">
+							<p>Итого: <span id="priceDisplay" class="order__allprice-number">4999</span>₽</p>
+						</div>
+					</div>
+				</div>
+				<div class="form-popup__form form">
+					<form action="#">
+						<div class="form__buttons">
+							<input class="form__button active" type="button" value="3 пачки" data-price="2999" data-quantity="3">
+							<input class="form__button" type="button" value="9 пачек" data-price="3999" data-quantity="9">
+							<input class="form__button" type="button" value="15 пачек" data-price="4999" data-quantity="15">
+						</div>
+						<div class="form__input">
+							<input name="name" type="text" placeholder="Как вас зовут?" data-input-req>
+						</div>
+						<div class="form__input">
+							<input name="tel" type="tel" placeholder="+7" data-input-req data-phone-pattern>
+						</div>
+						<div class="form__input">
+							<input name="address" type="text" placeholder="Адрес для СДЭКа">
+						</div>
+						<p class="form__privacy">Нажимая «Отправить», вы предоставляете Согласие на обработку персональных данных в
+							соответствии с <a target="_blank" href="../../files/policy-cloudpayments.pdf">Политикой в отношении
+								обработки
+								персональных
+								данных</a></p>
+						<button class="form__btn-submit button" type="submit" disabled data-button-send>Оформить</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="form-popup__wrapper-success success _hidden-wrapper">
+			<h2 class="success__title subtitle">Заказ оформлен!</h2>
+			<div class="success__item">
+				<div class="success__icon"><img src="../../assets/images/popup/passed.svg" alt="Успех"></div>
+				<div class="success__messages">
+					<p>Мы скоро свяжемся с вами для уточнения деталей</p>
+				</div>
+			</div>
+			<button class="success__button button" data-closemodal>Хорошо</button>
+		</div>
+
+		<div class="form-popup__wrapper-error error _hidden-wrapper">
+			<h2 class="error__title subtitle">Что-то пошло не так :(</h2>
+			<div class="error__item">
+				<div class="error__icon">
+					<img src="../../assets/images/popup/error.svg" alt="Что-то пошло не так...">
+					</style>
+				</div>
+			</div>
+			<button class="error__button button" data-error>Заказать ещё раз</button>
+		</div>
+	</div>
+</div>

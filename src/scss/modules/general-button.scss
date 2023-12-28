@@ -2,26 +2,57 @@
 @use '../base/mixin' as mix;
 
 .button {
-  @include mix.displayFlex(flex, center, center);
-  box-sizing: border-box;
-  width: 100%;
-  max-width: 270px;
-  padding: 1em;
-  @include mix.adaptivFont(var.$generalTextSize, var.$generalTextSizeMin);
-  color: var.$lightColor;
-  line-height: var.$generalLineHeight;
-  font-weight: 400;
-  background: var.$accentColorTwo;
-  border-radius: 8px;
-  transition: opacity .5s ease;
+	@include mix.displayFlex(flex, center, center);
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 200px;
+	padding: 24px;
+	font-size: 16px;
+	text-transform: uppercase;
+	color: var.$lightColor;
+	line-height: var.$generalLineHeight;
+	font-weight: 400;
+	border-radius: 24px;
+	background: var.$accentColor;
+	animation: splashing 6s infinite linear;
+	transition: opacity .5s ease;
 
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      opacity: .7;
-    }
-  }
+	@media (hover: hover) and (pointer: fine) {
+		&:hover {
+			opacity: .7;
+		}
+	}
 }
 
-.button_accent {
-  background-color: var.$accentColorTwo;
+.woman-version .button {
+	background: var.$accentColorWoman;
+	animation-name: splashingWoman;
+}
+
+@keyframes splashing {
+	0% {
+		box-shadow: 0px 0px 64px 0px rgba(244, 111, 1, .6);
+	}
+
+	50% {
+		box-shadow: 0px 0px 64px 0px var.$accentColor;
+	}
+
+	100% {
+		box-shadow: 0px 0px 64px 0px rgba(244, 111, 1, .6);
+	}
+}
+
+@keyframes splashingWoman {
+	0% {
+		box-shadow: 0px 0px 64px 0px rgba(0, 198, 255, .6);
+	}
+
+	50% {
+		box-shadow: 0px 0px 64px 0px var.$accentColorWoman;
+	}
+
+	100% {
+		box-shadow: 0px 0px 64px 0px rgba(0, 198, 255, .6);
+	}
 }

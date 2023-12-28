@@ -1,48 +1,25 @@
 <header class="header">
-	<div data-header class="header__navigation navigation">
-		<div class="container">
-			<div class="navigation__wrapper">
+	<div class="header__navigation navigation">
+		<div class="navigation__wrapper">
+			<div class="navigation__row">
 				@@include('../modules/logo.html', {
 				'class-logo-wrapper': 'navigation__logo',
 				'class-logo-link': 'navigation__logo-link'
 				})
-				<nav class="navigation__nav nav" data-nav>
-					<ul class="nav__list">
-						<li><a href="#aboutUs" class="nav__link">О нас</a></li>
-						<li><a href="#catalog" class="nav__link">Хит продаж</a></li>
-						<li><a href="#services" class="nav__link">Услуги</a></li>
-						<li><a href="#contact" class="nav__link">Контакты</a></li>
-						<li class="nav__item-hidden">
-							@@include('../modules/phone.html', {
-							'text': '+7(918) 167-20-61',
-							'class': 'nav__link'
-							})</li>
-					</ul>
-				</nav>
-				<div class="navigation__block">
-					<div class="navigation__contactinfo">
-						<div class="navigation__phone phone">
-							@@include('../modules/phone.html', {
-							'text': '+7(918) 167-20-61',
-							'class': 'nav__link'
-							})
-						</div>
-						<div class="navigation__worktime">
-
-						</div>
+				<div class="navigation__cart cart">
+					<div class="cart__wrapper">
+						<button class="cart__btn" title="Корзина" data-openmodal="3"><img src="../../assets/images/icon/cart.svg"
+								alt="Корзина"></button>
+						<span class="cart__current">3</span>
 					</div>
-					<div class="navigation__social social">
-						<ul class="social__list">
-
-							<li>@@include('../modules/phone.html', {
-								'text': '<img src="../../assets/images/icon/wa.svg" alt="WhatsApp" title="WhatsApp">',
-								'class': 'social__link social__link_wa'
-								})</li>
-						</ul>
-					</div>
-					@@include('../modules/burger.html', {})
 				</div>
 			</div>
+			<nav class="navigation__nav nav">
+				<ul class="nav__list">
+					<li><button class="nav__btn active" title="Для мужчин" data-tab="man">Для мужчин</button></li>
+					<li><button class="nav__btn" title="Для женщин" data-tab="woman">Для женщин</button></li>
+				</ul>
+			</nav>
 		</div>
 	</div>
 </header>

@@ -3,138 +3,152 @@
 @use '../base/extentsions';
 
 $sizeAfterEl: 1.1em;
+
+.header {
+	position: fixed;
+	z-index: 9;
+	width: 100%;
+	box-sizing: border-box;
+	top: 0;
+	left: 0;
+	padding: 0;
+	transition: .6s box-shadow, .6s background;
+
+	&._active {
+		.navigation__wrapper {
+			padding: 10px 0;
+		}
+
+		.navigation__logo,
+		.navigation__cart {
+			top: 50%;
+			transform: translateY(-50%) scale(.8);
+		}
+
+		.navigation__logo {
+			&::before {
+				z-index: -1;
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #040810;
+				filter: blur(35px);
+				opacity: .4;
+			}
+		}
+
+		.nav__btn {
+			background: var.$accentGeneral;
+			box-shadow: 0px 5px 23px 8px rgba(4, 8, 16, 0.13);
+		}
+	}
+}
+
 .navigation {
-  position: fixed;
-  z-index: 3;
-  width: 100%;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  padding: .5em 0;
-  color: var.$lightColor;
-  background: rgba(14, 46, 74, .9);
-  box-shadow: 0 4px 7px -5px rgba(1, 1, 1, 0.5);
-  transition: transform .8s ease;
+	color: var.$lightColor;
 
-  &._hidden {
-    transform: translateY(-150%);
-  }
+	&__wrapper {
+		position: relative;
+		@include mix.displayFlex(flex, center, center);
+		box-sizing: border-box;
+		width: 100%;
+		max-width: 1280px;
+		margin: 0 auto;
+		padding: 30px 0;
+		transition: .6s background;
+	}
 
-  &__zero-block {
-    flex: 0 1 220px;
-  }
+	&__logo {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		left: 0;
+		transition: .6s transform, .6s box-shadow;
+	}
 
-  &__wrapper {
-    @include mix.displayFlex(flex, space-between, center);
-    box-sizing: border-box;
-  }
-
-  &__logo {
-    flex: 0 1 auto;
-  }
-
-  &__block {
-    flex: 0 1 auto;
-    @include mix.displayFlex(flex, flex-end, center);
-    gap: 20px;
-  }
-
-  &__phone {
-    @include mix.displayFlex(flex, flex-end, flex-end);
-    flex-direction: column;
-    padding: 1em 0;
-  }
+	&__cart {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 21px;
+		transition: .6s transform, .6s box-shadow;
+	}
 }
 
 .nav {
-  flex: 1 1 auto;
-  @include mix.displayFlex(flex, center, center);
-  &__list {
-    @include mix.displayFlex(flex, center, center);
-  }
+	flex: 1 1 auto;
+	@include mix.displayFlex(flex, center, center);
 
-  &__item-hidden {
-    display: none;
-  }
+	&__list {
+		@include mix.displayFlex(flex, center, center);
+		gap: 1rem;
+	}
 
-  &__link {
-    position: relative;
-    display: block;
-    padding: 1em;
-    font-weight: 400;
-    font-size: #{var.$generalTextSize} + px;
-    line-height: var.$generalLineHeight;
-    transition: text-decoration .8s ease;
+	&__item-hidden {
+		display: none;
+	}
 
-    &:before {
-      @extend %pseudoElement;
-      bottom: 15px;
-      left: 18px;
-      width: 0;
-      height: 2px;
-      background: var.$lightColor;
-      transition: width .5s ease-in-out, color .5s ease-in-out;
-    }
+	&__btn {
+		padding: 10px 20px;
+		color: var.$subColorText;
+		font-size: 16px;
+		letter-spacing: -0.32px;
+		border-radius: 50px;
+		transition: .6s opacity;
 
-    @media (any-hover: hover) {
-      &:hover{
-        color: var.$lightColor;
-        &:before {
-          width: 70%;
-        }
-      }
-    }
-  }
+		&:hover {
+			opacity: .8;
+		}
+
+		&.active {
+			border: 2px solid #fff;
+			background: var.$accentGeneral;
+		}
+	}
 }
 
-.phone {
-  &__link {
-    position: relative;
-    padding-left: 1.5em;
-    font-weight: 400;
-    @include mix.adaptivFont(18, var.$generalTextSizeMin);
+.cart {
+	&__wrapper {
+		position: relative;
 
-    &:after {
-      @extend %pseudoElement;
-      top: calc(50% - ($sizeAfterEl / 2));
-      left: 0;
-      width: $sizeAfterEl;
-      height: $sizeAfterEl;
-      background: url('../../assets/images/icon/phone.svg') center center / contain no-repeat;
-      animation: callAnimation 1s ease-in-out infinite;
-    }
+		&:hover .cart__btn>img {
+			opacity: .5;
+		}
+	}
 
-    @media (any-hover: hover) {
-        &:hover {
-          text-decoration: underline;
-        }
-    }
-  }
+	&__btn {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		background: var.$accentGeneral;
+
+		&>img {
+			transition: .6s opacity;
+		}
+	}
+
+	&__current {
+		position: absolute;
+		top: -9px;
+		right: -9px;
+		display: block;
+		text-align: center;
+		height: 24px;
+		width: 24px;
+		font-size: 12px;
+		border-radius: 50%;
+		background: var.$accentColor;
+		border: 1px solid #fff;
+	}
 }
 
-@keyframes callAnimation {
-  0% {
-    transform: rotate(0);
-  }
-  15% {
-    transform: rotate(-12deg);
-  }
-  40% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(0);
-  }
-  60% {
-    transform: rotate(0);
-  }
-  70% {
-    transform: rotate(0);
-  }
-  85% {
-    transform: rotate(12deg);
-  }
-  100% {
-    transform: rotate(0);
-  }
+.woman-version .cart__current {
+	background: var.$accentColorWoman;
 }

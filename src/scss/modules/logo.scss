@@ -4,11 +4,21 @@
 
 .logo {
 	@include mix.displayFlex(flex, center, center);
-	transition: .6s transform ease;
 
-	@media (any-hover: hover) {
-		&:hover {
-			transform: rotateY(360deg)
-		}
-	}
+}
+
+.man-version .logoman {
+	display: block;
+}
+
+.man-version .logowoman {
+	display: none;
+}
+
+.woman-version .logowoman {
+	display: block;
+}
+
+.woman-version .logoman {
+	display: none;
 }

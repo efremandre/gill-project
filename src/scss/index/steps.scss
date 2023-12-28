@@ -1,0 +1,62 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+
+.steps {
+	padding: 60px 0;
+
+	&__title {
+		margin-bottom: 50px;
+		max-width: 790px;
+	}
+
+	&__accent {
+		color: var.$accentColor;
+	}
+
+	&__items {
+		@include mix.displayFlex(flex, space-between, stretch);
+		gap: 30px;
+		margin: 0 -10px;
+	}
+
+	&__item {
+		padding: 10px;
+	}
+
+	&__item-header {
+		@include mix.displayFlex(flex, space-between, center);
+	}
+
+	&__item-number-wrapper {
+		@include mix.displayFlex(flex, center, center);
+		text-align: center;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		border: 3px solid #173065;
+		font-size: 48px;
+		font-weight: 800;
+	}
+
+	&__icon {
+		width: 37px;
+		height: 30px;
+		background: url('../../assets/images/icon/arrow-steps.svg') center center / cover no-repeat;
+	}
+
+	&__content-title {
+		font-size: 24px;
+		font-weight: 700;
+		letter-spacing: -0.48px;
+		padding-right: 1rem;
+	}
+
+	&__description {
+		font-size: 18px;
+		letter-spacing: -0.18px;
+	}
+}
+
+.woman-version .steps__accent {
+	color: var.$accentColorWoman;
+}

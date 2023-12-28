@@ -1,0 +1,118 @@
+@use '../base/variable' as var;
+@use '../base/mixin' as mix;
+
+.tobuy {
+	padding-bottom: 48px;
+
+	&__wrapper {
+		@include mix.displayFlex(flex, space-between, center);
+		gap: 3rem;
+		padding: 13px 60px;
+		color: #fff;
+		border-radius: 64px;
+		background: radial-gradient(80.1% 73.21% at 50% 45.93%, #22407F 0%, #000 100%);
+	}
+
+	&__item {
+		padding: 20px 0;
+	}
+
+	&__title {
+		color: #fff;
+		font-weight: 800;
+		line-height: 56px;
+		letter-spacing: -1.44px;
+		margin-bottom: 20px;
+	}
+
+	&__title-accent {
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 16px;
+		letter-spacing: -0.72px;
+
+		&::before {
+			bottom: -4px;
+		}
+	}
+
+	&__button {
+		@include mix.displayFlex(flex, space-between, center);
+	}
+
+	&__btn {
+		max-width: 207px;
+	}
+
+	&__attention {
+		position: relative;
+		font-size: 20px;
+		letter-spacing: -.4px;
+	}
+
+	&__attention-text {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__feedbacks {
+		flex: 0 0 345px;
+		padding: 0 0 20px 0;
+	}
+}
+
+.feedback {
+	@include mix.displayFlex(flex, flex-start, flex-end);
+	gap: 16px;
+	margin-bottom: 36px;
+
+	&:nth-child(1) {
+		margin-left: 40px;
+	}
+
+	&:nth-child(2) {
+		margin-right: 40px;
+	}
+
+	&:nth-child(3) {
+		margin-left: 40px;
+		margin-bottom: 0;
+	}
+
+	&__avatar {
+		flex: 0 0 48px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, .25);
+	}
+
+	&__message-wrapper {
+		position: relative;
+	}
+
+	&__message {
+		padding: 13px;
+		color: #fefefe;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: .25px;
+		border-radius: 24px 24px 24px 4px;
+		border: 2px solid #fff;
+		background: #173065;
+	}
+
+	&__date {
+		position: absolute;
+		bottom: -19px;
+		left: 13px;
+		color: #dadada;
+		font-size: 12px;
+		line-height: 16px;
+		letter-spacing: .4px
+	}
+}

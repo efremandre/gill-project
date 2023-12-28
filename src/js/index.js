@@ -1,19 +1,29 @@
-import { aos } from './modules/_aos.js'
-import { burger } from './modules/_burger.js'
 import { disabledBtnForm } from './modules/_disabledBtnForm.js'
 import { sendForm } from './modules/_form.js'
 import { hello } from './modules/_hello.js'
 import { initSlider } from './modules/_initSlider.js'
-import { pressDawn } from './modules/_pressDawn.js'
+import { modal } from './modules/_modal.js'
 import { pressUp } from './modules/_pressUp.js'
-import { scrollHeader } from './modules/_scrollHeader.js'
+import { timer } from './modules/_timer.js'
+import { toggleVersion } from './modules/_toggleVersion.js'
+import { setCurrent } from './modules/_setCurrent.js'
+import { initialState } from './modules/_state.js'
 
 hello()
-burger()
+initialState()
+timer()
+toggleVersion()
+setCurrent()
+modal()
 initSlider()
-aos()
-scrollHeader()
-pressDawn()
 pressUp()
 disabledBtnForm()
 sendForm()
+
+window.addEventListener('scroll', function () {
+	if (pageYOffset > 50) {
+		document.querySelector('.header').classList.add('_active')
+	} else {
+		document.querySelector('.header').classList.remove('_active')
+	}
+})
