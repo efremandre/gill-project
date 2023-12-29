@@ -25,6 +25,8 @@ export function modal() {
 			localStorage.setItem('price', 3999)
 		} else if (target.dataset.openmodal === "15") {
 			localStorage.setItem('price', 4999)
+		} else if (target.dataset.openmodal === "cart") {
+			null
 		}
 
 		priceDisplay.innerHTML = `${localStorage.getItem('price')}`
@@ -68,6 +70,7 @@ export function modal() {
 			formInput.forEach(el => el.value = '')
 			formPopupBody.classList.remove('open')
 			formPopupBodyOrder.classList.remove('_hidden-wrapper')
+			formPopupBodySuccess.classList.add('_hidden-wrapper')
 			formPopupBodyError.classList.add('_hidden-wrapper')
 
 			setTimeout(() => {

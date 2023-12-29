@@ -2,9 +2,31 @@
 @use './base/mixin' as mix;
 @use './base/extentsions';
 
-@media screen and (min-width: 1600px) {}
+@media screen and (min-width: 1600px) {
+	.svg-bottom {
+		overflow: hidden;
+		position: absolute;
+		bottom: -2px;
+		left: -26px;
+		width: 110%;
+		height: 10vw;
+		background: #fff;
+		clip-path: polygon(100% -7%, 0% 100%, 100% 100%);
+	}
+}
 
-@media screen and (min-width:1280px) and (max-width:1599px) {}
+@media screen and (min-width:1280px) and (max-width:1599px) {
+	.svg-bottom {
+		overflow: hidden;
+		position: absolute;
+		bottom: -2px;
+		left: -26px;
+		width: 110%;
+		height: 10vw;
+		background: #fff;
+		clip-path: polygon(100% -7%, 0% 100%, 100% 100%);
+	}
+}
 
 @media screen and (min-width:960px) and (max-width:1280px) {
 	.conatainer-image {
@@ -185,6 +207,10 @@
 		}
 	}
 
+	.svg-bottom {
+		z-index: 2;
+	}
+
 	.action-block {
 		position: relative;
 		padding: 30px 22px;
@@ -225,7 +251,7 @@
 	/// ADVANTAGES
 
 	.advantages {
-		padding: 0;
+		padding: 40px 0 0 0;
 
 		&__title-wrapper {
 			@include mix.displayFlex(flex, center, center);
@@ -525,8 +551,8 @@
 			z-index: 10;
 			top: 20px;
 			right: 20px;
-			width: 38px;
-			height: 38px;
+			width: 40px;
+			height: 40px;
 		}
 
 		&__header {
@@ -608,7 +634,6 @@
 	.hero {
 		position: relative;
 		height: auto;
-		clip-path: polygon(0 0, 100% 0, 100% 96%, 0% 100%);
 
 		&__description {
 			margin-bottom: 30px;
@@ -626,12 +651,16 @@
 		}
 
 		&__image {
-			position: static;
+			position: relative;
 			margin: 0 auto;
 			z-index: 3;
 			width: 100%;
 			max-width: 400px;
 		}
+	}
+
+	.svg-bottom {
+		z-index: 2;
 	}
 
 	.action-block {
@@ -673,7 +702,7 @@
 	/// ADVANTAGES
 
 	.advantages {
-		padding: 0;
+		padding: 30px 0 0 0;
 
 		&__title-wrapper {
 			@include mix.displayFlex(flex, center, center);
@@ -759,7 +788,7 @@
 
 		&__image {
 			position: relative;
-			bottom: 12px;
+			bottom: -23px;
 			left: 0;
 			height: 436px;
 			width: 376px;
@@ -963,6 +992,7 @@
 	}
 
 	.form-popup {
+
 		padding: 0 10px;
 
 		&__wrapper-order,
@@ -978,8 +1008,8 @@
 			z-index: 10;
 			top: 20px;
 			right: 20px;
-			width: 38px;
-			height: 38px;
+			width: 40px;
+			height: 40px;
 		}
 
 		&__header {
@@ -1060,7 +1090,6 @@
 	.hero {
 		position: relative;
 		height: auto;
-		clip-path: polygon(0 0, 100% 0, 100% 97%, 0% 100%);
 
 		&__description {
 			margin-bottom: 30px;
@@ -1125,7 +1154,7 @@
 	/// ADVANTAGES
 
 	.advantages {
-		padding: 0;
+		padding: 30px 0 0 0;
 
 		&__title-wrapper {
 			@include mix.displayFlex(flex, center, center);
@@ -1430,8 +1459,8 @@
 			z-index: 10;
 			top: 20px;
 			right: 20px;
-			width: 38px;
-			height: 38px;
+			width: 40px;
+			height: 40px;
 		}
 
 		&__header {
@@ -1464,7 +1493,5 @@
 		}
 	}
 }
-
-@media screen and (max-width:319.98px) {}
 
 @media (any-hover: none) and (orientation: landscape) {}

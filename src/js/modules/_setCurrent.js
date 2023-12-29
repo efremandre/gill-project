@@ -7,9 +7,6 @@ export function setCurrent() {
 	const priceDisplay = document.querySelector('#priceDisplay')
 	const cartCurrent = document.querySelector('.cart__current')
 
-	if (!localStorage.getItem('quantity')) localStorage.setItem('quantity', 3)
-	if (!localStorage.getItem('price')) localStorage.setItem('price', 2999)
-
 	cartCurrent.textContent = `${localStorage.getItem('quantity')}`
 	priceDisplay.textContent = `${localStorage.getItem('price')}`
 
@@ -29,7 +26,7 @@ export function setCurrent() {
 			const selectedQuantity = button.dataset.quantity
 
 			localStorage.setItem('price', selectedPrice)
-			localStorage.setItem('quantity', selectedQuantity)
+			if (button.dataset !== 'cart') localStorage.setItem('quantity', selectedQuantity)
 
 			const localPrice = localStorage.getItem('price')
 			const localQuantity = localStorage.getItem('quantity')
@@ -40,9 +37,11 @@ export function setCurrent() {
 	})
 
 	openPopupButtons.forEach(el => {
+
 		el.addEventListener('click', () => {
+
 			let valueBtn = el.dataset.openmodal
-			localStorage.setItem('quantity', valueBtn)
+			if (valueBtn !== 'cart') localStorage.setItem('quantity', valueBtn)
 			cartCurrent.innerText = localStorage.getItem('quantity')
 
 			formButton.forEach(btnForm => {
