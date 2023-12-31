@@ -18,7 +18,7 @@
 	&__title {
 		margin-bottom: 40px;
 		color: #fff;
-		font-size: 56px;
+		font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
 		line-height: 64px;
 		letter-spacing: -1.12px;
 	}

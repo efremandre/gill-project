@@ -21,6 +21,8 @@
 
 	&__item {
 		flex: 0 0 45%;
+		position: relative;
+		z-index: 3;
 		padding: 65px 60px 0 10px;
 	}
 
@@ -62,6 +64,7 @@
 
 	&__attention {
 		position: absolute;
+		z-index: 3;
 		bottom: 30px;
 		right: 60px;
 		font-size: 20px;
