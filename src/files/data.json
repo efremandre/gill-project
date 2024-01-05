@@ -5,10 +5,50 @@
 	},
 	{
 		"avatar": "../../assets/images/tobuy/andrew.jpg",
-		"message": "+1 Андрей из Москвы купил 36 кассет"
+		"message": "+1 Андрей М. из Москвы купил 36 кассет"
 	},
 	{
 		"avatar": "../../assets/images/tobuy/aleksey.jpg",
 		"message": "+1 Алексей из Москвы купил 60 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/aleksey.jpg",
+		"message": "+1 Петр из Уфы купил 60 кассет"
+	},
+	{
+		"avatar": "https://sun9-6.userapi.com/impg/0lovRHTv8PumUS16nsXmHI7EztZ1bPN9mSR-HQ/2-CiWY5IBew.jpg?size=810x1080&quality=95&sign=49bd09c5d522a002eaf63a887af990fd&type=album",
+		"message": "+1 Андрей Е. из Краснодара купил 36 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/oleg.jpg",
+		"message": "+1 Алексей К. из Москвы купил 60 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/aleksey.jpg",
+		"message": "+1 Сергей из Владимира купил 12 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/andrew.jpg",
+		"message": "+1 Игорь Р. из Санкт-Петербурга купил 36 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/oleg.jpg",
+		"message": "+1 Максим из Тольятти купил 12 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/oleg.jpg",
+		"message": "+1 Алексей К. из Санкт-Петербурга купил 60 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/aleksey.jpg",
+		"message": "+1 Сергей из Самары купил 60 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/andrew.jpg",
+		"message": "+1 Игорь из Москвы купил 12 кассет"
+	},
+	{
+		"avatar": "../../assets/images/tobuy/oleg.jpg",
+		"message": "+1 Максим из Кореновска купил 60 кассет"
 	}
 ]

@@ -12,7 +12,6 @@ export function modal() {
 	const formPopupBodyError = document.querySelector('.form-popup__wrapper-error')
 	const priceDisplay = document.querySelector('#priceDisplay')
 
-
 	const body = document.body
 	const header = document.querySelector('.header')
 
@@ -56,6 +55,7 @@ export function modal() {
 			body.style.paddingRight = '0'
 			header.style.paddingRight = '0'
 		}, 500)
+
 	}
 
 	const closePopupError = () => {
@@ -64,8 +64,8 @@ export function modal() {
 	}
 
 	const outsideClickHandler = (event) => {
-
 		if (event.target.classList.contains('form-popup__body')) {
+
 			const formInput = formPopupBody.querySelectorAll('.form__input input')
 			formInput.forEach(el => el.value = '')
 			formPopupBody.classList.remove('open')

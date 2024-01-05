@@ -5,6 +5,6 @@ export const server = (done) => {
 		},
 		notify: false,
 		port: 3000,
-		host: '192.168.1.36',
+		host: '192.168.43.124',
 	})
 }
